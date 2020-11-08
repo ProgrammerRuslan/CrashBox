@@ -1,4 +1,6 @@
-class Box {
+import { getRandomInt } from '../../helper'
+
+export default class Box {
   constructor(id){
     this.id = id
     this.name = 'box' + id
@@ -23,7 +25,7 @@ class Box {
     let left = this.name.style.left
     left = parseInt(left)
 
-    if (widthElement + left > screen.width || left < 0){
+    if (widthElement + left > screen.width - 10 || left < 0){
       this.speedX = -this.speedX
     }
 
@@ -33,7 +35,7 @@ class Box {
     let top = this.name.style.top
     top = parseInt(top)
 
-    if (widthElement + top > screen.height || top < 0){
+    if (widthElement + top > screen.height - 145 || top < 0){
       this.speedY = -this.speedY
     }
     

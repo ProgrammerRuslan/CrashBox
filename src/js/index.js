@@ -1,3 +1,5 @@
+import {createBoxes} from './components/box/boxHelper'
+
 let boxes = createBoxes(10)
 
 setInterval(() => {

@@ -1,3 +1,5 @@
+import Box from './box'
+
 function createBoxes(count){
   let boxes = []
 
@@ -8,3 +10,5 @@ function createBoxes(count){
 
   return boxes
 }
+
+export {createBoxes}
