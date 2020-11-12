@@ -1,4 +1,5 @@
 import {createBoxes} from './components/box/boxHelper'
+import '../css/main.css'
 
 let boxes = createBoxes(10)
 
