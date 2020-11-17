@@ -14,4 +14,34 @@ body {
   left: 0;
   top: 0;
 }
+
+.score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #d12a4b;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 2;
+}
+
+.health {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #d12a4b;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 2;
+}
 /*# sourceMappingURL=main.css.map */
