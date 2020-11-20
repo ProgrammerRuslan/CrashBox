@@ -1,4 +1,5 @@
 import { getRandomInt } from '../../helper'
+import { back } from '../health-item/healthItem'
 
 export default class Box {
   constructor(id, size){
@@ -19,7 +20,7 @@ export default class Box {
     this.name.style.top = this.y + 'px'
     this.name.style.width = this.size
     this.name.style.height = this.size
-    document.body.append(this.name)
+    back.append(this.name)
   }
   
   move(){
