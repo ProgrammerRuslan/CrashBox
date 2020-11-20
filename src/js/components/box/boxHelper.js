@@ -1,10 +1,10 @@
 import Box from './box'
 
-function createBoxes(count){
+function createBoxes(count, size){
   let boxes = []
   let score = 0
   for (let i = 0; i < count; i++) {
-    boxes[i] = new Box(i)
+    boxes[i] = new Box(i, size)
     boxes[i].addBox()
     console.log(boxes[i])
     boxes[i].name.addEventListener("click", () => {

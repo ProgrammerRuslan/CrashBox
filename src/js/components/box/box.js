@@ -1,13 +1,14 @@
 import { getRandomInt } from '../../helper'
 
 export default class Box {
-  constructor(id){
+  constructor(id, size){
     this.id = id
     this.name = 'box' + id
-    this.x = getRandomInt(1, screen.width - 53 - 6)
-    this.y = getRandomInt(1, screen.height - 53 - 120)
+    this.x = getRandomInt(1, screen.width - size - 10)
+    this.y = getRandomInt(1, screen.height - size - 145)
     this.speedX = getRandomInt(3,6)
     this.speedY = getRandomInt(3,6)
+    this.size = size + 'px'
   }
   
   addBox() {
@@ -16,12 +17,14 @@ export default class Box {
     this.name.className = 'box'
     this.name.style.left = this.x + 'px'
     this.name.style.top = this.y + 'px'
+    this.name.style.width = this.size
+    this.name.style.height = this.size
     document.body.append(this.name)
   }
   
   move(){
-    let widthElement = this.name.offsetWidth
-
+    let widthElement = parseInt(this.size)
+  
     let left = this.name.style.left
     left = parseInt(left)
 
