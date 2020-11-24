@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crash box</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crash box</title>
 </head>
 <body>
-    <div id="back" class="back">
-        <div id="score" class="score">SCORE: 0</div>
-        <div id="health" class="health">HEALTH: 3</div>
-        <div id="start-game" class="start-game" onclick="event.stopPropagation()">
-            <div id="start-game_text" class="start-game_text">START GAME</div>
-            <button id="start-game_button" class="start-game_button">START</button>
-        </div>
-        <div id="game-over" class="game-over" onclick="event.stopPropagation()">
-            <div id="game-over_text" class="game-over_text">GAME OVER</div>
-            <button id="game-over_button" class="game-over_button">RESTART</button>
-        </div>
-        <div id="number-level" class="number-level" onclick="event.stopPropagation()">
-            <div id="number-level_text" class="number-level_text">LEVEL 1</div>
-        </div>
+  <div id="container" class="container">
+    <div id="score" class="score">SCORE: 0</div>
+
+    <div id="health" class="health">HEALTH: 3</div>
+
+    <div id="start-game" class="start-game" onclick="event.stopPropagation()">
+      <div id="start-game_text" class="start-game_text">START GAME</div>
+      <button id="start-game_button" class="start-game_button">START</button>
     </div>
+
+    <div id="game-over" class="game-over" onclick="event.stopPropagation()">
+      <div id="game-over_text" class="game-over_text">GAME OVER</div>
+      <button id="game-over_button" class="game-over_button">RESTART</button>
+    </div>
+
+    <div id="number-level" class="number-level" onclick="event.stopPropagation()">
+        <div id="number-level_text" class="number-level_text">LEVEL 1</div>
+    </div>
+  </div>
 </body>
 </html>
