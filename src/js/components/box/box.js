@@ -10,7 +10,6 @@ export default class Box {
     this.size = size + 'px'
     this.addBox()
   }
-  
   addBox() {
     this.box = document.createElement('div')
     this.box.className = 'box'
@@ -20,29 +19,35 @@ export default class Box {
     this.box.style.height = this.size
     back.append(this.box)
   }
-  
-  move(){
+  moveX(){
     let widthElement = parseInt(this.size)
-  
+
     let left = this.box.style.left
     left = parseInt(left)
 
-    if (widthElement + left > back.offsetWidth  || left < 0){
+    if (widthElement + left > back.offsetWidth || left < 0) {
       this.speedX = -this.speedX
     }
 
-    left = left + this.speedX 
+    left = left + this.speedX
     this.box.style.left = left + 'px'
+  }
+  moveY(){
+    let widthElement = parseInt(this.size)
 
     let top = this.box.style.top
     top = parseInt(top)
 
-    if (widthElement + top > back.offsetHeight  || top < 0){
+    if (widthElement + top > back.offsetHeight || top < 0) {
       this.speedY = -this.speedY
     }
-    
+
     top = top + this.speedY
     this.box.style.top = top + 'px'
+  }
+  move() {
+    this.moveX()
+    this.moveY()
   }
 }
 
