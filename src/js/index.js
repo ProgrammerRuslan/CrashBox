@@ -1,6 +1,6 @@
 import {createBoxes, score} from './components/box/boxHelper'
 
-import '../css/main.css'
+import '../sass/main.sass'
 
 function levelCreator(numberLevel, count, size, speed){
   document.querySelector('.number-level_text').innerHTML = 'LEVEL ' + numberLevel
