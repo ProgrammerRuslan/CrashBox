@@ -1,7 +1,6 @@
 
 let gameOverLayout = document.querySelector('.game-over')
 export let back = document.querySelector('.back')
-console.log(back.offsetHeight);
 
 let health = 3
 back.addEventListener("click", () => {

@@ -1,8 +1,8 @@
 import Box from './box'
-import {levelCreator} from '../../index'
+
 
 let score = 0
-export function createBoxes(count, size){
+function createBoxes(count, size){
   let boxes = []
   for (let i = 0; i < count; i++) {
     boxes[i] = new Box(size)
@@ -26,6 +26,24 @@ export function createBoxes(count, size){
 
   return boxes
 }
+
+export function levelCreator(numberLevel, count, size, speed) {
+  document.querySelector('.number-level_text').innerHTML = 'LEVEL ' + numberLevel
+  document.querySelector('.number-level').style.display = 'flex'
+
+  setTimeout(function boxes() {
+    document.querySelector('.number-level').style.display = 'none'
+  }, 2000)
+
+  let boxes = createBoxes(count, size)
+
+  setInterval(() => {
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].move()
+    }
+  }, speed)
+  return boxes
+} 
 
 
 
