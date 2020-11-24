@@ -2,49 +2,47 @@ import { getRandomInt } from '../../helper'
 import { back } from '../health-item/healthItem'
 
 export default class Box {
-  constructor(id, size){
-    this.id = id
-    this.name = 'box' + id
-    this.x = getRandomInt(1, screen.width - size - 10)
-    this.y = getRandomInt(1, screen.height - size - 145)
+  constructor(size){
+    this.x = getRandomInt(1, back.offsetWidth - size)
+    this.y = getRandomInt(1, back.offsetHeight - size)
     this.speedX = getRandomInt(3,6)
     this.speedY = getRandomInt(3,6)
     this.size = size + 'px'
+    this.addBox()
   }
   
   addBox() {
-    this.name = document.createElement('div')
-    this.name.id = this.id
-    this.name.className = 'box'
-    this.name.style.left = this.x + 'px'
-    this.name.style.top = this.y + 'px'
-    this.name.style.width = this.size
-    this.name.style.height = this.size
-    back.append(this.name)
+    this.box = document.createElement('div')
+    this.box.className = 'box'
+    this.box.style.left = this.x + 'px'
+    this.box.style.top = this.y + 'px'
+    this.box.style.width = this.size
+    this.box.style.height = this.size
+    back.append(this.box)
   }
   
   move(){
     let widthElement = parseInt(this.size)
   
-    let left = this.name.style.left
+    let left = this.box.style.left
     left = parseInt(left)
 
-    if (widthElement + left > screen.width - 10 || left < 0){
+    if (widthElement + left > back.offsetWidth  || left < 0){
       this.speedX = -this.speedX
     }
 
     left = left + this.speedX 
-    this.name.style.left = left + 'px'
+    this.box.style.left = left + 'px'
 
-    let top = this.name.style.top
+    let top = this.box.style.top
     top = parseInt(top)
 
-    if (widthElement + top > screen.height - 145 || top < 0){
+    if (widthElement + top > back.offsetHeight  || top < 0){
       this.speedY = -this.speedY
     }
     
     top = top + this.speedY
-    this.name.style.top = top + 'px'
+    this.box.style.top = top + 'px'
   }
 }
 

@@ -1,7 +1,7 @@
 
 let gameOverLayout = document.querySelector('.game-over')
-let back = document.querySelector('.back')
-back.style.height = screen.height + 'px'
+export let back = document.querySelector('.back')
+console.log(back.offsetHeight);
 
 let health = 3
 back.addEventListener("click", () => {
@@ -17,4 +17,3 @@ function gameOver(){
     }
 }
 
-export {back}
