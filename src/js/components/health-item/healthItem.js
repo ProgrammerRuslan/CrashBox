@@ -10,7 +10,7 @@ back.addEventListener("click", () => {
 })
 
 function gameOver(){
-    if(health < 0){
+    if(health < 1){
         document.querySelector('.health').innerHTML = 'HEALTH: ' + 0
         gameOverLayout.style.display = 'flex'
     }
