@@ -6,19 +6,19 @@
     <title>Crash box</title>
 </head>
 <body>
-    <div class="back">
-        <div class="score">SCORE: 0</div>
-        <div class="health">HEALTH: 3</div>
-        <div class="start-game" onclick="event.stopPropagation()">
-            <div class="start-game_text">START GAME</div>
-            <button class="start-game_button">START</button>
+    <div id="back" class="back">
+        <div id="score" class="score">SCORE: 0</div>
+        <div id="health" class="health">HEALTH: 3</div>
+        <div id="start-game" class="start-game" onclick="event.stopPropagation()">
+            <div id="start-game_text" class="start-game_text">START GAME</div>
+            <button id="start-game_button" class="start-game_button">START</button>
         </div>
-        <div class="game-over" onclick="event.stopPropagation()">
-            <div class="game-over_text">GAME OVER</div>
-            <button class="game-over_button">REPLAY</button>
+        <div id="game-over" class="game-over" onclick="event.stopPropagation()">
+            <div id="game-over_text" class="game-over_text">GAME OVER</div>
+            <button id="game-over_button" class="game-over_button">RESTART</button>
         </div>
-        <div class="number-level" onclick="event.stopPropagation()">
-            <div class="number-level_text">LEVEL 1</div>
+        <div id="number-level" class="number-level" onclick="event.stopPropagation()">
+            <div id="number-level_text" class="number-level_text">LEVEL 1</div>
         </div>
     </div>
 </body>

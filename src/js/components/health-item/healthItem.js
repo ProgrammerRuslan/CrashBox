@@ -1,18 +1,16 @@
-
-let gameOverLayout = document.querySelector('.game-over')
-export let back = document.querySelector('.back')
+export let back = document.getElementById('back')
 
 let health = 3
 back.addEventListener("click", () => {
     health--
-    document.querySelector('.health').innerHTML = 'HEALTH: ' + health
+    document.getElementById('health').innerHTML = 'HEALTH: ' + health
     gameOver()
 })
 
 function gameOver(){
     if(health < 1){
-        document.querySelector('.health').innerHTML = 'HEALTH: ' + 0
-        gameOverLayout.style.display = 'flex'
+        document.getElementById('health').innerHTML = 'HEALTH: ' + 0
+        document.getElementById('game-over').style.display = 'flex'
     }
 }
 

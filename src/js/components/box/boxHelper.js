@@ -10,7 +10,7 @@ function createBoxes(count, size){
       event.stopPropagation()
       boxes[i].box.style.display = 'none'
       score++
-      document.querySelector('.score').innerHTML = 'SCORE: ' + score
+      document.getElementById('score').innerHTML = 'SCORE: ' + score
       if (score == 5) {
         levelCreator(2, 8, 80, 30)
       }
@@ -18,8 +18,8 @@ function createBoxes(count, size){
         levelCreator(3, 10, 50, 20)
       }
       if (score == 23) {
-        document.querySelector('.game-over_text').innerHTML = 'YOU WIN'
-        document.querySelector('.game-over').style.display = 'flex'
+        document.getElementById('game-over_text').innerHTML = 'YOU WIN'
+        document.getElementById('game-over').style.display = 'flex'
       }  
     })
   }
@@ -28,11 +28,11 @@ function createBoxes(count, size){
 }
 
 export function levelCreator(numberLevel, count, size, speed) {
-  document.querySelector('.number-level_text').innerHTML = 'LEVEL ' + numberLevel
-  document.querySelector('.number-level').style.display = 'flex'
+  document.getElementById('number-level_text').innerHTML = 'LEVEL ' + numberLevel
+  document.getElementById('number-level').style.display = 'flex'
 
   setTimeout(function boxes() {
-    document.querySelector('.number-level').style.display = 'none'
+    document.getElementById('number-level').style.display = 'none'
   }, 2000)
 
   let boxes = createBoxes(count, size)
