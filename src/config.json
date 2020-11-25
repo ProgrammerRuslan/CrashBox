@@ -1,0 +1,27 @@
+{
+  "lvl1":{
+    "numLevel": 1,
+    "countBoxes": 5,
+    "sizeBoxes" : 100,
+    "speedBoxes": 30
+  },
+  "lvl2":{
+    "numLevel": 2,
+    "countBoxes": 8,
+    "sizeBoxes" : 80,
+    "speedBoxes": 25
+  },
+  "lvl3":{
+    "numLevel": 3,
+    "countBoxes": 10,
+    "sizeBoxes" : 60,
+    "speedBoxes": 20
+  },
+  "lvl4":{
+    "numLevel": 4,
+    "countBoxes": 12,
+    "sizeBoxes" : 50,
+    "speedBoxes": 15
+  },
+  "endGame": 5
+}

@@ -2,6 +2,7 @@ import {levelCreator} from './helpers/gameHelper'
 import Health from '../js/components/health/health'
 import {$} from './helpers/commonHelper'
 import {checkGameOver} from './helpers/gameHelper'
+import con from '../config.json'
 
 import '../sass/main.sass'
 
@@ -10,7 +11,7 @@ function createGame() {
 
   $('#start-game_button').addEventListener('click', () => {
     $('#start-game').style.display = 'none'
-    levelCreator(1, 5, 100, 40)
+    levelCreator(con.lvl1.numLevel, con.lvl1.countBoxes, con.lvl1.sizeBoxes, con.lvl1.speedBoxes)
   })
 
   $('#game-over_button').addEventListener('click', () => {
