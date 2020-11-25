@@ -3,12 +3,13 @@ import Box from './box'
 import Score from '../../components/score/score'
 import {boxCounter ,checkLevelEnd, endGame} from '../../helpers/gameHelper'
 import con from '../../../config.json' 
+import {crashBox} from '../../sound'
 
 const score = new Score()
 
 function boxHandler(e, boxes, i) {
   e.stopPropagation()
-
+  crashBox.play()
   boxes[i].box.style.display = 'none'
   boxCounter.increment()
   score.increment()
