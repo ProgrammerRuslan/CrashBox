@@ -2,8 +2,9 @@ import {$} from './commonHelper'
 import {createBoxes} from '../components/box/boxHelper'
 import LevelCounter from '../counters/levelCounter'
 import BoxCounter from '../counters/boxCouneter'
+import config from '../../config.json' 
 
-const levelCounter = new LevelCounter()
+export const levelCounter = new LevelCounter()
 export const boxCounter = new BoxCounter()
 
 export function checkGameOver(health){
@@ -14,6 +15,8 @@ export function checkGameOver(health){
 }
 
 export function levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes) {
+  boxCounter.set(0)
+
   $('#number-level_text').textContent = 'LEVEL ' + numLevel
   $('#number-level').style.display = 'flex'
 
@@ -24,17 +27,15 @@ export function levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes) {
   setInterval(_ => boxes.forEach(el => el.move()), speedBoxes)
 } 
 
-export function checkLevelEnd(arr, numLevel, countBoxes, sizeBoxes, speedBoxes) {
-  if (boxCounter.get() == arr.length && levelCounter.get() == numLevel){
-    levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes)
-    levelCounter.increment()
-    boxCounter.set(0)
-  }
+export function checkLevelEnd(boxes) {
+  return boxCounter.get() == boxes.length ? true : false
 }
 
-export function endGame(arr, numLevel) {
-  if (boxCounter.get() == arr.length && levelCounter.get() == numLevel) {
+export function checkEndGame(numLevel) {
+  if (numLevel == Object.keys(config).length + 1) {
     $('#game-over_text').innerHTML = 'YOU WIN'
     $('#game-over').style.display = 'flex'
+    return true
   }
+  return false
 }

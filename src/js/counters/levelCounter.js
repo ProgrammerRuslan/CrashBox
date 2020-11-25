@@ -1,6 +1,6 @@
 export default class LevelCounter {
   constructor() {
-    this.level = 2
+    this.level = 1
   }
 
   increment() {

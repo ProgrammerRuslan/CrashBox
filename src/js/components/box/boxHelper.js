@@ -1,25 +1,32 @@
 import {$} from '../../helpers/commonHelper'
 import Box from './box'
 import Score from '../../components/score/score'
-import {boxCounter ,checkLevelEnd, endGame} from '../../helpers/gameHelper'
-import con from '../../../config.json' 
-import {crashBox} from '../../sound'
+import {boxCounter, levelCounter, levelCreator, checkLevelEnd, checkEndGame} from '../../helpers/gameHelper'
+import config from '../../../config.json' 
+import {crashBoxSound} from '../../sounds'
 
 const score = new Score()
 
 function boxHandler(e, boxes, i) {
   e.stopPropagation()
-  crashBox.play()
+
+  crashBoxSound.play()
+
   boxes[i].box.style.display = 'none'
+  
   boxCounter.increment()
   score.increment()
 
   $('#score').textContent = 'SCORE: ' + score.get()
 
-  checkLevelEnd(boxes, con.lvl2.numLevel, con.lvl2.countBoxes, con.lvl2.sizeBoxes, con.lvl2.speedBoxes)
-  checkLevelEnd(boxes, con.lvl3.numLevel, con.lvl3.countBoxes, con.lvl3.sizeBoxes, con.lvl3.speedBoxes)
-  checkLevelEnd(boxes, con.lvl4.numLevel, con.lvl4.countBoxes, con.lvl4.sizeBoxes, con.lvl4.speedBoxes)
-  endGame(boxes, con.endGame)
+  if(checkLevelEnd(boxes)){
+    levelCounter.increment()
+    
+    if( !checkEndGame(levelCounter.get()) ){
+      const {numLevel, countBoxes, sizeBoxes, speedBoxes} = config['lvl' + levelCounter.get()]
+      levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes)
+    }
+  }
 }
 
 export function createBoxes(count, size){
