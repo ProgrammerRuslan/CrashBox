@@ -1,7 +1,7 @@
 import {$} from './commonHelper'
 import {createBoxes} from '../components/box/boxHelper'
-import LevelCounter from '../conters/levelCounter'
-import BoxCounter from '../conters/boxCouneter'
+import LevelCounter from '../counters/levelCounter'
+import BoxCounter from '../counters/boxCouneter'
 
 const levelCounter = new LevelCounter()
 export const boxCounter = new BoxCounter()
