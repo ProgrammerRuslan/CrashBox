@@ -1,5 +1,10 @@
 import {$} from './commonHelper'
 import {createBoxes} from '../components/box/boxHelper'
+import LevelCounter from '../conters/levelCounter'
+import BoxCounter from '../conters/boxCouneter'
+
+const levelCounter = new LevelCounter()
+export const boxCounter = new BoxCounter()
 
 export function checkGameOver(health){
   if(health < 1){
@@ -18,3 +23,18 @@ export function levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes) {
 
   setInterval(_ => boxes.forEach(el => el.move()), speedBoxes)
 } 
+
+export function checkLevelEnd(arr, numLevel, countBoxes, sizeBoxes, speedBoxes) {
+  if (boxCounter.get() == arr.length && levelCounter.get() == numLevel){
+    levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes)
+    levelCounter.increment()
+    boxCounter.set(0)
+  }
+}
+
+export function endGame(arr, numLevel) {
+  if (boxCounter.get() == arr.length && levelCounter.get() == numLevel) {
+    $('#game-over_text').innerHTML = 'YOU WIN'
+    $('#game-over').style.display = 'flex'
+  }
+}
