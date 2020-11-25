@@ -10,10 +10,10 @@ import '../sass/main.sass'
 function createGame() {
   const health = new Health(3)
   
-  mainSound.play()
   $('#start-game_button').addEventListener('click', () => {
     $('#start-game').style.display = 'none'
     levelCreator(con.lvl1.numLevel, con.lvl1.countBoxes, con.lvl1.sizeBoxes, con.lvl1.speedBoxes)
+    mainSound.play()
   })
 
   $('#game-over_button').addEventListener('click', () => {
