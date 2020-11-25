@@ -2,17 +2,19 @@ import {levelCreator} from './helpers/gameHelper'
 import Health from '../js/components/health/health'
 import {$} from './helpers/commonHelper'
 import {checkGameOver} from './helpers/gameHelper'
-import con from '../config.json'
-import {mainSound, crashBox} from './sound'
+import config from '../config.json'
+import {mainSound} from './sounds'
 
 import '../sass/main.sass'
 
 function createGame() {
   const health = new Health(3)
-  
+
+  const {lvl1} = config 
+
   $('#start-game_button').addEventListener('click', () => {
     $('#start-game').style.display = 'none'
-    levelCreator(con.lvl1.numLevel, con.lvl1.countBoxes, con.lvl1.sizeBoxes, con.lvl1.speedBoxes)
+    levelCreator(lvl1.numLevel, lvl1.countBoxes, lvl1.sizeBoxes, lvl1.speedBoxes)
     mainSound.play()
   })
 
