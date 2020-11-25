@@ -4,7 +4,7 @@
   "description": "destroy boxes, dude :D",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve"
+    "start": "start http://localhost:4200/ & webpack serve"
   },
   "repository": {
     "type": "git",
