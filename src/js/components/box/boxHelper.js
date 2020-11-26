@@ -1,11 +1,13 @@
 import {$} from '../../helpers/commonHelper'
 import Box from './box'
 import Score from '../../components/score/score'
-import {boxCounter, levelCounter, levelCreator, checkLevelEnd, checkEndGame} from '../../helpers/gameHelper'
+import {boxCounter, levelCreator, checkLevelEnd, checkEndGame} from '../../helpers/gameHelper'
 import config from '../../../config.json' 
 import {crashBoxSound} from '../../sounds'
+import Level from '../level/level'
 
 const score = new Score()
+const level = new Level()
 
 function boxHandler(e, boxes, i) {
   e.stopPropagation()
@@ -20,10 +22,10 @@ function boxHandler(e, boxes, i) {
   $('#score').textContent = 'SCORE: ' + score.get()
 
   if(checkLevelEnd(boxes)){
-    levelCounter.increment()
+    level.increment()
     
-    if( !checkEndGame(levelCounter.get()) ){
-      const {numLevel, countBoxes, sizeBoxes, speedBoxes} = config['lvl' + levelCounter.get()]
+    if( !checkEndGame(level.get()) ){
+      const {numLevel, countBoxes, sizeBoxes, speedBoxes} = config['lvl' + level.get()]
       levelCreator(numLevel, countBoxes, sizeBoxes, speedBoxes)
     }
   }

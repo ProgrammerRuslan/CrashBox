@@ -1,10 +1,8 @@
 import {$} from './commonHelper'
 import {createBoxes} from '../components/box/boxHelper'
-import LevelCounter from '../counters/levelCounter'
-import BoxCounter from '../counters/boxCouneter'
+import BoxCounter from '../components/box/boxCouneter'
 import config from '../../config.json' 
 
-export const levelCounter = new LevelCounter()
 export const boxCounter = new BoxCounter()
 
 export function checkGameOver(health){

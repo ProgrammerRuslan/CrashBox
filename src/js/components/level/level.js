@@ -1,4 +1,4 @@
-export default class LevelCounter {
+export default class Level {
   constructor() {
     this.level = 1
   }
